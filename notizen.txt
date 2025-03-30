@@ -1,0 +1,3 @@
+Man könnte in der Admin ansicht eine Checkbox machen um Produkte auch automatisch bei Etsy hochzuladen
+Man könnte Bewertungen von Etsy ziehen und in einem sich drehenden karusell anzeigen auf der website für kunden
+Animationen wenn man die seite wechselt sieh osmo eigene website

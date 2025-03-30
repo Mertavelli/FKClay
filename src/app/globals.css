@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
+/* Farbvariablen */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EDEDED;
+  --foreground: #343339;
+  --border: #CECECE;
+  --font-sans: 'Inter', sans-serif;
+  /* Verwende Inter als Sans-Serif */
+  --font-serif: 'Prata', serif;
+  /* Verwende Prata als Serif */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dunkler Modus */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --border: #555555;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Überschriften mit Prata */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
 }
