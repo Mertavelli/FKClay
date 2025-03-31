@@ -39,11 +39,15 @@ export default function Navbar() {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
+            if (currentScrollY == 0) {
+                setIsHidden(false);
+            }
+            
             if (currentScrollY <= 450) {
                 setIsHidden(false); // Wenn Scrollposition unter 400px, Navbar immer anzeigen
             }
             if (currentScrollY > 450) {
-                setIsHidden(true); // Wenn Scrollposition über 250px, Navbar ausblenden
+                setIsHidden(true);
             }
 
             const isScrollingDown = currentScrollY > lastScrollY; // Bewegung nach oben = false; Bewegung nach unten = true;
@@ -66,23 +70,21 @@ export default function Navbar() {
                 <Cart openCart={openCart} setOpenCart={setOpenCart} />
             )}
 
+            {/* Navbar Complete */}
             <div onMouseLeave={handleMouseLeave} className='relative'>
-
                 <div
-                    className={`flex justify-between items-center w-full mt-[1rem] z-30 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isHidden
+                    className={`flex justify-between items-center w-full mt-[1rem] z-50 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isHidden
                         ? 'hidden'
                         : showNavbar
                             ? 'opacity-100 translate-y-0' // Einblenden mit Animation
                             : 'opacity-0 translate-y-[-100%]' // Ausblenden nach oben
-                        }`}
-                >
-                    <a href='/' className="mx-auto">
-                        <img
-                            src={inverted ? "/logo_white.png" : "/logo_black.png"}
-                            className="w-20 cursor-pointer"
-                        />
-                    </a>
+                        }`}>
 
+                    <Link href={'/'} className="mx-auto">
+                        <img src={inverted ? "/logo_white.png" : "/logo_black.png"} className="w-20 cursor-pointer" />
+                    </Link>
+
+                    {/* Navbar Menu */}
                     <div className="flex items-center gap-6 absolute right-[1.5rem] sm:right-[2.5rem] text-xs">
                         <Link href={"/pages/shop"}
                             className={`${inverted ? 'text-white' : ''} hidden sm:block hover:underline cursor-pointer`}>
@@ -182,34 +184,32 @@ export default function Navbar() {
                             </div>
                         </div>
                     )}
-
                 </div>
 
+            </div>
 
 
-                {/* Mobile */}
-                {isClicked && (
-                    <div className="absolute top-20 p-10 pt-15 z-40 bg-[#EDEDED] w-full h-screen lg:hidden">
-                        <div className="grid grid-cols-2 gap-[5rem]">
-                            <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
-                                <h1 className="text-[1.75rem] mb-5">SHOP</h1>
-                                <Link href={"/"} className="hover:underline cursor-pointer">Home</Link>
-                                <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Products</Link>
-                                <Link href={"/pages/contact"} className="hover:underline cursor-pointer">Contact</Link>
-                                <Link href={"/pages/faq"} className="hover:underline cursor-pointer">FAQ</Link>
-                            </div>
-                            <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
-                                <h1 className="text-[1.75rem] mb-5">SOCIAL</h1>
-                                <Link href={"https://www.instagram.com/fkclaycreations?igsh=OWU0djFxZ2d1bnhm"} className="hover:underline cursor-pointer">Instagram</Link>
-                                <Link href={"https://www.tiktok.com/@fkcreations.official?_t=ZN-8v7jZgA4sys&_r=1"} className="hover:underline cursor-pointer">Tiktok</Link>
-                                <Link href={"https://www.etsy.com/de/shop/FKClayCreations"} className="hover:underline cursor-pointer">Etsy</Link>
-                                <div className='invisible'>Dummy</div>
-                            </div>
+            {/* Mobile */}
+            {isClicked && (
+                <div className="absolute top-20 p-10 pt-15 z-50 bg-[#EDEDED] w-full h-screen lg:hidden">
+                    <div className="grid grid-cols-2 gap-[5rem]">
+                        <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
+                            <h1 className="text-[1.75rem] mb-5">SHOP</h1>
+                            <Link href={"/"} className="hover:underline cursor-pointer">Home</Link>
+                            <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Products</Link>
+                            <Link href={"/pages/contact"} className="hover:underline cursor-pointer">Contact</Link>
+                            <Link href={"/pages/faq"} className="hover:underline cursor-pointer">FAQ</Link>
+                        </div>
+                        <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
+                            <h1 className="text-[1.75rem] mb-5">SOCIAL</h1>
+                            <Link href={"https://www.instagram.com/fkclaycreations?igsh=OWU0djFxZ2d1bnhm"} className="hover:underline cursor-pointer">Instagram</Link>
+                            <Link href={"https://www.tiktok.com/@fkcreations.official?_t=ZN-8v7jZgA4sys&_r=1"} className="hover:underline cursor-pointer">Tiktok</Link>
+                            <Link href={"https://www.etsy.com/de/shop/FKClayCreations"} className="hover:underline cursor-pointer">Etsy</Link>
+                            <div className='invisible'>Dummy</div>
                         </div>
                     </div>
-                )}
-
-            </div>
+                </div>
+            )}
 
             {isEntered && (
                 <div

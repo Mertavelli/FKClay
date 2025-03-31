@@ -6,10 +6,10 @@ import Help from "@/app/components/sections/shop/Help"
 export default function FAQPage() {
 
     return (
-        <div className="mt-[5rem] min-h-screen">
-            <h1 className="text-center text-[4rem] mb-[5rem]">Any Questions?</h1>
+        <div className="mt-[6.5rem] sm:mt-[5rem] min-h-screen">
+            <h1 className="text-center text-[3rem] sm:text-[5rem] mb-[3rem] sm:mb-[5rem]">Any Questions?</h1>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center px-10 pb-20">
                 <div className="flex flex-col w-[60rem] border-t border-[#CECECE]">
                     <Question
                         question={"How can I change my order?"}

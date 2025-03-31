@@ -18,7 +18,7 @@ export default function Cart({ openCart, setOpenCart }) {
                     <button onClick={() => setOpenCart(false)} className="hover:underline">CLOSE</button>
                 </div>
 
-                <div className="max-h-[40rem] overflow-y-auto">
+                <div className="max-h-[40rem] overflow-y-auto pb-7">
                     {products.map((product) => (
                         <div key={product.id} className="flex flex-col gap-1">
                             <Link href={`/pages/shop/${product.id}`}>
