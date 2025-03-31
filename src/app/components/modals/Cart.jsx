@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Cart({ openCart, setOpenCart }) {
 
     return (
-        <div className="absolute w-full h-screen z-50">
+        <div className="absolute top-20 w-full h-screen z-50">
             {/* Hintergrund, Z-Index niedrig halten */}
             <div className="fixed top-0 left-0 w-full h-full bg-[#343339]/75"></div>
 

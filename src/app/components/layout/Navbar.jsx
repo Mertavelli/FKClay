@@ -34,6 +34,16 @@ export default function Navbar() {
         setIsEntered(false);
     }
 
+    const handleCart = () => {
+        if (isClicked) {
+            return;
+        }
+
+        if (!isClicked) {
+            setOpenCart(!openCart);
+        }
+    }
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,7 +52,7 @@ export default function Navbar() {
             if (currentScrollY == 0) {
                 setShowNavbar(true);
             }
-            
+
             if (currentScrollY <= 450) {
                 setIsHidden(false); // Wenn Scrollposition unter 400px, Navbar immer anzeigen
             }
@@ -66,9 +76,6 @@ export default function Navbar() {
 
     return (
         <div>
-            {openCart && !isClicked && (
-                <Cart openCart={openCart} setOpenCart={setOpenCart} />
-            )}
 
             {/* Navbar Complete */}
             <div onMouseLeave={handleMouseLeave} className='relative'>
@@ -92,7 +99,7 @@ export default function Navbar() {
                         </Link>
 
                         <button
-                            onClick={() => setOpenCart(!openCart)}
+                            onClick={handleCart}
                             className={`${inverted ? 'text-white' : ''} invisible sm:visible sm:flex items-center gap-1 hover:underline cursor-pointer`}
                         >
                             <p>CART</p>
@@ -108,7 +115,7 @@ export default function Navbar() {
 
                         {/* Cart für Mobile */}
                         <button
-                            onClick={() => setOpenCart(!openCart)}
+                            onClick={handleCart}
                             className="sm:hidden fixed left-[1.5rem]"
                         >
                             <PiShoppingCartSimpleThin size={30} color={inverted ? 'white' : "black"} />
@@ -187,6 +194,10 @@ export default function Navbar() {
                 </div>
 
             </div>
+
+            {openCart && !isClicked && (
+                <Cart openCart={openCart} setOpenCart={setOpenCart} />
+            )}
 
 
             {/* Mobile */}
