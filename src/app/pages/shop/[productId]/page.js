@@ -33,7 +33,7 @@ export default function ProductPage() {
                     <div className="grid sm:grid-cols-2">
 
                         <div className="overflow-hidden w-full h-full relative">
-                            <h1 className="absolute sm:hidden px-[2rem] text-[3rem] leading-none bottom-5 bg-white/35 w-min py-3 rounded-r-full">{product.product}</h1>
+                            <h1 className="absolute sm:hidden px-[2rem] text-[3rem] leading-none bottom-5 bg-white/45 w-min py-3 rounded-r-full">{product.product}</h1>
                             <img src={product.src} className="w-full object-cover object-center" />
                         </div>
 
