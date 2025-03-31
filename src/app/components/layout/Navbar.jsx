@@ -92,7 +92,7 @@ export default function Navbar() {
                         </Link>
 
                         <button
-                            onClick={() => setOpenCart(true)}
+                            onClick={() => setOpenCart(!openCart)}
                             className={`${inverted ? 'text-white' : ''} invisible sm:visible sm:flex items-center gap-1 hover:underline cursor-pointer`}
                         >
                             <p>CART</p>
@@ -108,7 +108,7 @@ export default function Navbar() {
 
                         {/* Cart für Mobile */}
                         <button
-                            onClick={() => setOpenCart(true)}
+                            onClick={() => setOpenCart(!openCart)}
                             className="sm:hidden fixed left-[1.5rem]"
                         >
                             <PiShoppingCartSimpleThin size={30} color={inverted ? 'white' : "black"} />
