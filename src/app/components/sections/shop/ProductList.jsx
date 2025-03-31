@@ -5,7 +5,7 @@ import { products } from "@/app/pages/shop/products";
 export default function ProductList() {
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center py-10 sm:py-20">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-13 w-[20rem] md:w-[45rem] lg:w-[75rem]">
 
                 {products.map((product) => (

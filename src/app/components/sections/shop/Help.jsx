@@ -3,10 +3,10 @@ import Link from "next/link"
 export default function Help() {
 
     return (
-        <div className="flex justify-center items-center h-min py-20 mt-[5rem] border-t border-[#CECECE]">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[5rem] px-20 lg:px-0 max-w-[75rem]">
+        <div className="flex justify-center items-center h-min py-10 sm:py-20 border-t border-[#CECECE]">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[3rem] sm:gap-[5rem] px-10 sm:px-20 lg:px-0 max-w-[75rem]">
 
-                <h1 className="text-center lg:text-left text-[4rem]">Help?</h1>
+                <h1 className="text-center lg:text-left text-[3rem] sm:text-[4rem]">Help?</h1>
 
                 <div className="flex flex-col gap-5">
                     <h1 className="text-[2rem]">Markets</h1>
