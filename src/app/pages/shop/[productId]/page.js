@@ -32,13 +32,14 @@ export default function ProductPage() {
                 <div>
                     <div className="grid sm:grid-cols-2">
 
-                        <div className="overflow-hidden w-full h-full">
+                        <div className="overflow-hidden w-full h-full relative">
+                            <h1 className="absolute sm:hidden px-[2rem] text-[3rem] leading-none bottom-5 bg-white/35 w-min py-3 rounded-r-full">{product.product}</h1>
                             <img src={product.src} className="w-full object-cover object-center" />
                         </div>
 
-                        <div className="flex justify-center sm:mt-[15rem] w-full pt-20 sm:pt-0">
+                        <div className="flex justify-center sm:mt-[15rem] w-full pt-10 sm:pt-0">
                             <div className="flex flex-col gap-5 px-[2rem]  lg:px-[8rem]">
-                                <h1 className="text-[3rem] sm:text-[4rem] leading-none">{product.product}</h1>
+                                <h1 className="hidden md:block text-[3rem] sm:text-[4rem] leading-none">{product.product}</h1>
                                 <p>{`$ ${product.price} USD`}</p>
                                 <p>{product.description}</p>
 
@@ -47,7 +48,7 @@ export default function ProductPage() {
                                     <button onClick={() => setOpenCart(true)} className="bg-[#343339] rounded-full p-3 px-10 text-white cursor-pointer">ADD TO CART</button>
                                 </div>
 
-                                <div className="mt-5 flex sm:justify-between gap-10 text-sm border-y border-[#CECECE] py-5">
+                                <div className="mt-5 flex justify-between md:justify-normal gap-10 text-sm border-y border-[#CECECE] py-5">
                                     <button onClick={() => setOpenInformation(true)} className="hover:underline cursor-pointer">DETAILS</button>
                                     <button onClick={() => setOpenInformation(true)} className="hover:underline cursor-pointer">DELIVERY</button>
                                     <button onClick={() => setOpenInformation(true)} className="hover:underline cursor-pointer">RETURNS</button>
@@ -56,9 +57,9 @@ export default function ProductPage() {
                         </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 py-20 lg:py-[10rem]">
+                    <div className="grid sm:grid-cols-2 py-10 sm:py-20 lg:py-[10rem]">
                         <h1 className="text-[1.5rem] text-center sm:text-left mb-10 sm:mb-0 sm:pl-[10rem]">DESCRIPTION</h1>
-                        <p className="px-[5rem] lg:px-[8rem]">Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis egestas integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget nulla facilisi etiam. Velit egestas dui id ornare arcu odio ut. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Auctor eu augue ut lectus arcu bibendum at varius. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices.</p>
+                        <p className="px-[2rem] sm:px-[5rem] lg:px-[8rem]">Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis egestas integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget nulla facilisi etiam. Velit egestas dui id ornare arcu odio ut. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Auctor eu augue ut lectus arcu bibendum at varius. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices.</p>
                     </div>
 
                     <BrandNew />
