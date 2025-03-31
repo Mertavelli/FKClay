@@ -66,7 +66,7 @@ export default function Navbar() {
 
     return (
         <div>
-            {openCart && (
+            {openCart && !isClicked && (
                 <Cart openCart={openCart} setOpenCart={setOpenCart} />
             )}
 
@@ -190,7 +190,7 @@ export default function Navbar() {
 
 
             {/* Mobile */}
-            {isClicked && (
+            {isClicked && !openCart && (
                 <div className="absolute top-20 p-10 pt-15 z-50 bg-[#EDEDED] w-full h-screen lg:hidden">
                     <div className="grid grid-cols-2 gap-[5rem]">
                         <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
