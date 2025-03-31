@@ -88,14 +88,14 @@ export default function Navbar() {
                         }`}>
 
                     <Link href={'/'} className="mx-auto">
-                        <img src={inverted ? "/logo_white.png" : "/logo_black.png"} className="w-20 cursor-pointer" />
+                        <img src={inverted ? "/logo_white.png" : "/logo_black.png"} className="w-25 cursor-pointer" />
                     </Link>
 
                     {/* Navbar Menu */}
                     <div className="flex items-center gap-6 absolute right-[1.5rem] sm:right-[2.5rem] text-xs">
                         <Link href={"/pages/shop"}
                             className={`${inverted ? 'text-white' : ''} hidden sm:block hover:underline cursor-pointer`}>
-                            PRODUCTS
+                            SHOP
                         </Link>
 
                         <button
@@ -151,7 +151,7 @@ export default function Navbar() {
                                     <div className="grid grid-cols-1 gap-2">
                                         <h1 className="text-[1.5rem] mb-5">SHOP</h1>
                                         <Link href={"/"} className="hover:underline cursor-pointer">Home</Link>
-                                        <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Products</Link>
+                                        <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Shop</Link>
                                         <Link href={"/pages/contact"} className="hover:underline cursor-pointer">Contact</Link>
                                         <Link href={"/pages/faq"} className="hover:underline cursor-pointer">FAQ</Link>
                                     </div>
@@ -207,7 +207,7 @@ export default function Navbar() {
                         <div className="grid grid-cols-1 gap-5 text-[1.25rem]">
                             <h1 className="text-[1.75rem] mb-5">SHOP</h1>
                             <Link href={"/"} className="hover:underline cursor-pointer">Home</Link>
-                            <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Products</Link>
+                            <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Shop</Link>
                             <Link href={"/pages/contact"} className="hover:underline cursor-pointer">Contact</Link>
                             <Link href={"/pages/faq"} className="hover:underline cursor-pointer">FAQ</Link>
                         </div>

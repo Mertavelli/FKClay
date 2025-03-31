@@ -8,7 +8,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 text-left sm:text-center sm:gap-2">
                         <h1 className="text-[1.5rem] mb-2 sm:mb-5">SHOP</h1>
                         <Link href={"/"} className="hover:underline cursor-pointer">Home</Link>
-                        <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Products</Link>
+                        <Link href={"/pages/shop"} className="hover:underline cursor-pointer">Shop</Link>
                         <Link href={"/pages/contact"} className="hover:underline cursor-pointer">Contact</Link>
                         <Link href={"/pages/faq"} className="hover:underline cursor-pointer">FAQ</Link>
                     </div>

@@ -1,4 +1,5 @@
 import ProductCard from "../../shared/ProductCard"
+import Link from "next/link"
 
 export default function Categories() {
     return (
@@ -8,26 +9,26 @@ export default function Categories() {
 
                 <div className="flex sm:flex-row flex-col items-center justify-center gap-13">
 
-                    <a href="">
+                    <Link href="/pages/shop">
                         <ProductCard
                             src={"/cat1.png"}
-                            title={"OSLO"}
+                            title={"SCHMUCK"}
                         />
-                    </a>
+                    </Link>
 
-                    <a href="">
+                    <Link href="/pages/shop">
                         <ProductCard
                             src={"/cat2.png"}
-                            title={"NEW YORK"}
+                            title={"DEKO"}
                         />
-                    </a>
+                    </Link>
 
-                    <a href="">
+                    <Link href="/pages/shop">
                         <ProductCard
                             src={"/cat3.png"}
-                            title={"LISABON"}
+                            title={"SALE"}
                         />
-                    </a>
+                    </Link>
 
                 </div>
             </div>
