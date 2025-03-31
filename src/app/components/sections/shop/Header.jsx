@@ -2,7 +2,7 @@
 export default function Header() {
 
     return (
-        <div className="mb-[2rem] sm:mb-[5rem]">
+        <div className="sm:mb-[5rem]">
             <h1 className="text-center text-[3rem] sm:text-[5rem] mb-[2rem] sm:mb-[5rem]">SHOP</h1>
 
             <div className="flex justify-center gap-6">

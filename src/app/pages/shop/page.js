@@ -5,7 +5,7 @@ import Help from "@/app/components/sections/shop/Help";
 export default function Shop() {
 
     return (
-        <div className="mt-[5rem]">
+        <div className="mt-[6.5rem] sm:mt-[5rem]">
             <Header />
             <ProductList />
             <Help />
