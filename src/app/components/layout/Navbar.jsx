@@ -40,7 +40,7 @@ export default function Navbar() {
             const currentScrollY = window.scrollY;
 
             if (currentScrollY == 0) {
-                setIsHidden(false);
+                setShowNavbar(true);
             }
             
             if (currentScrollY <= 450) {
