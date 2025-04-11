@@ -11,7 +11,7 @@ export default function ProductCard({ newProduct, src, title, product, price }) 
                 <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-[3rem] text-center leading-none">{title}</h1>
             )}
 
-            <img src={src} className="rounded-full w-55 sm:w-full" />
+            <img src={src} className="rounded-full w-[20rem] h-[20rem]" />
 
             <div className="mt-5">
                 <p className="text-center text-sm sm:text-lg">{product}</p>

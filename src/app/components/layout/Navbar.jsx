@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import Link from 'next/link';
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import { CiMenuBurger } from "react-icons/ci";
+import { useShoppingCart } from "use-shopping-cart";
 
 export default function Navbar() {
     const [showNavbar, setShowNavbar] = useState(true);
@@ -15,6 +16,7 @@ export default function Navbar() {
     const [isEntered, setIsEntered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [openCart, setOpenCart] = useState(false);
+    const { cartDetails } = useShoppingCart();
 
     const pathname = usePathname();
     const inverted = pathname === "/"; // Invertierte Navbar nur auf "/"
@@ -83,8 +85,8 @@ export default function Navbar() {
                     className={`flex justify-between items-center w-full mt-[1rem] z-50 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isHidden
                         ? 'hidden'
                         : showNavbar
-                            ? 'opacity-100 translate-y-0' // Einblenden mit Animation
-                            : 'opacity-0 translate-y-[-100%]' // Ausblenden nach oben
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-[-100%]'
                         }`}>
 
                     <Link href={'/'} className="mx-auto">
@@ -109,7 +111,7 @@ export default function Navbar() {
                                     : 'bg-[#343339] text-white'
                                     } p-1 w-5 h-5 rounded-full flex justify-center items-center text-center`}
                             >
-                                0
+                                {Object.values(cartDetails).reduce((total, item) => total + item.quantity, 0) || 0}
                             </p>
                         </button>
 
@@ -123,8 +125,8 @@ export default function Navbar() {
 
                         {/* Burger-Icon als Button für kleine Bildschirme */}
                         <button
-                            className="sm:hidden" // Wird nur auf kleinen Bildschirmen angezeigt
-                            onClick={() => setIsClicked(!isClicked)} // Gleiche Funktion wie der andere Button
+                            className="sm:hidden"
+                            onClick={() => setIsClicked(!isClicked)}
                         >
                             <CiMenuBurger
                                 size={30}
@@ -142,7 +144,7 @@ export default function Navbar() {
                         </button>
                     </div>
 
-                    {/* PC ${inverted ? "top-20" : "top-0"} bg-[#EDEDED]*/}
+                    
                     {isEntered && (
                         <div className={`hidden lg:block h-[17rem] p-10 pl-25 fixed top-15 z-20 bg-white/80 backdrop-blur-lg w-full`}>
                             <div className='flex gap-20'>

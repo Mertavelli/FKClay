@@ -6,6 +6,7 @@ import ProductPopup from "@/app/components/modals/ProductPopup";
 import Cart from "@/app/components/modals/Cart";
 import { useParams } from "next/navigation";
 import { useProductById } from '../../../api/api.js';
+import { useShoppingCart } from "use-shopping-cart";
 
 export default function ProductPage() {
     const [openInformation, setOpenInformation] = useState(false);
@@ -13,11 +14,26 @@ export default function ProductPage() {
     const { id } = useParams();
     const { data: product, isLoading, error } = useProductById(id);
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const [count, setCount] = useState(1)
+    const { addItem, cartDetails, removeItem, totalPrice } = useShoppingCart()
 
     if (isLoading) return <p>Loading products...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    const handleAddToCart = () => {
+        addItem({
+            id: product._id,
+            name: product.name,
+            price: product.price,
+            currency: "EUR",
+            imagePath: product.imagePath
+        })
+        setOpenCart(true)
+        console.log(cartDetails)
+    }
+
     return (
+
         <div>
             {product && (
                 <div className="relative">
@@ -27,7 +43,11 @@ export default function ProductPage() {
                     )}
 
                     {openInformation && (
-                        <ProductPopup openInformation={openInformation} setOpenInformation={setOpenInformation} />
+                        <ProductPopup
+                            openInformation={openInformation}
+                            setOpenInformation={setOpenInformation}
+                            product={product}
+                        />
                     )}
 
                     {!openInformation && (
@@ -46,8 +66,8 @@ export default function ProductPage() {
                                         <p>{product.shortDescription}</p>
 
                                         <div className="mt-5 flex gap-3">
-                                            <input type="number" className="bg-white rounded-full border border-black p-3 w-[5rem] text-center" />
-                                            <button onClick={() => setOpenCart(true)} className="bg-[#343339] rounded-full p-3 px-10 text-white cursor-pointer">ADD TO CART</button>
+                                            <input value={count} onChange={(e) => setCount(e.target.value)} type="number" className="bg-white rounded-full border border-black p-3 w-[5rem] text-center" />
+                                            <button onClick={handleAddToCart} className="bg-[#343339] rounded-full p-3 px-10 text-white cursor-pointer">ADD TO CART</button>
                                         </div>
 
                                         <div className="mt-5 flex justify-between md:justify-normal gap-10 text-sm border-y border-[#CECECE] py-5">

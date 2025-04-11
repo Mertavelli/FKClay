@@ -9,10 +9,10 @@ export default function Help() {
                 <h1 className="text-center lg:text-left text-[3rem] sm:text-[4rem]">Help?</h1>
 
                 <div className="flex flex-col gap-5">
-                    <h1 className="text-[2rem]">Markets</h1>
+                    <h1 className="text-[2rem]">Contact</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, corrupti nihil inventore suscipit.</p>
                     <div className="flex items-center gap-3 hover:gap-5 transition-all">
-                        <Link href={"/"} className="hover:underline cursor-pointer">FIND A MARKET</Link>
+                        <Link href={"/pages/contact"} className="hover:underline cursor-pointer">GET IN CONTACT</Link>
                         <img src="/arrow_right.svg" />
                     </div>
 

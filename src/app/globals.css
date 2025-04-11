@@ -1,17 +1,13 @@
 @import "tailwindcss";
 
-/* Farbvariablen */
 :root {
   --background: #EDEDED;
   --foreground: #343339;
   --border: #CECECE;
   --font-sans: 'Inter', sans-serif;
-  /* Verwende Inter als Sans-Serif */
   --font-serif: 'Prata', serif;
-  /* Verwende Prata als Serif */
 }
 
-/* Dunkler Modus */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,7 +16,6 @@
   }
 }
 
-/* Überschriften mit Prata */
 h1,
 h2,
 h3,

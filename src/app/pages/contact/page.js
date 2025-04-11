@@ -10,7 +10,7 @@ export default function Contact() {
             <div className="flex justify-center">
                 <div className="grid grid-cols-2 lg:grid-cols-4 sm:w-[70rem] space-y-[2.5rem] lg:space-y-0">
 
-                    <div className="grid grid-cols-1 text-left sm:text-center sm:gap-2">
+                    <div className="flex flex-col text-left sm:text-center sm:gap-2">
                         <h1 className="text-[1.5rem] mb-2 sm:mb-5">SOCIAL</h1>
                         <Link href={"https://www.instagram.com/fkclaycreations?igsh=OWU0djFxZ2d1bnhm"} className="hover:underline cursor-pointer">INSTAGRAM</Link>
                         <Link href={"https://www.tiktok.com/@fkcreations.official?_t=ZN-8v7jZgA4sys&_r=1"} className="hover:underline cursor-pointer">TIKTOK</Link>
@@ -18,7 +18,7 @@ export default function Contact() {
                         <div className="invisible">Dummy</div>
                     </div>
 
-                    <div className="grid grid-cols-1 text-left sm:text-center sm:gap-2">
+                    <div className="flex flex-col text-left sm:text-center sm:gap-2">
                         <h1 className="text-[1.5rem] mb-2 sm:mb-5">CONTACT</h1>
                         <p>INFO@EXAMPLE.COM</p>
                         <p>+49 178 4880126</p>

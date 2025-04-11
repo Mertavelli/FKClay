@@ -1,12 +1,7 @@
 'use client'
 
-import { useParams } from "next/navigation";
-import { products } from "@/app/pages/shop/products"
-
-export default function ProductPopup({ openInformation, setOpenInformation }) {
-
-    const params = useParams(); // Params korrekt abrufen
-    const product = products.find(p => p.id === params.productId);
+export default function ProductPopup({ openInformation, setOpenInformation, product }) {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     if (!product) {
         return <p>Produkt nicht gefunden.</p>;
@@ -17,7 +12,7 @@ export default function ProductPopup({ openInformation, setOpenInformation }) {
 
             <div className="relative w-full h-screen overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#343339]/75"></div>
-                <img src={product.src} className="w-full object-cover object-center" />
+                <img src={`${API_URL}${product.imagePath}`} className="w-full object-cover object-center" />
             </div>
 
 
@@ -42,4 +37,4 @@ export default function ProductPopup({ openInformation, setOpenInformation }) {
             </div>
         </div>
     )
-}
+} 

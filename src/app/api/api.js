@@ -57,3 +57,21 @@ export const useCreateProduct = () => {
         },
     });
 };
+
+// STRIPE CHECKOUT HOOK
+export const useCreateCheckoutSession = () => {
+    return useMutation({
+        mutationFn: async (cartItems) => {
+            const response = await fetch(`${API_ROUTES_URL}/checkout`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ items: cartItems }),
+            });
+
+            if (!response.ok) throw new Error("Checkout-Session konnte nicht erstellt werden");
+            return response.json(); // Erwartet { id: "stripe_session_id" }
+        },
+    });
+};
