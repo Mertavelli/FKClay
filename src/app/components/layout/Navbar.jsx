@@ -19,11 +19,11 @@ export default function Navbar() {
     const { cartDetails } = useShoppingCart();
 
     const pathname = usePathname();
-    const inverted = pathname === "/"; // Invertierte Navbar nur auf "/"
+    const inverted = pathname === "/";
 
     useEffect(() => {
-        setShowNavbar(true); // Navbar anzeigen
-        setIsHidden(false);  // Verhindern, dass sie unsichtbar bleibt
+        setShowNavbar(true);
+        setIsHidden(false);
         setOpenCart(false);
         setIsClicked(false);
     }, [pathname]);
@@ -56,19 +56,19 @@ export default function Navbar() {
             }
 
             if (currentScrollY <= 450) {
-                setIsHidden(false); // Wenn Scrollposition unter 400px, Navbar immer anzeigen
+                setIsHidden(false);
             }
             if (currentScrollY > 450) {
                 setIsHidden(true);
             }
 
-            const isScrollingDown = currentScrollY > lastScrollY; // Bewegung nach oben = false; Bewegung nach unten = true;
+            const isScrollingDown = currentScrollY > lastScrollY;
 
             if (currentScrollY > 300 && !isHidden) {
-                setShowNavbar(!isScrollingDown); // Navbar ein- oder ausblenden je nach Scrollrichtung
+                setShowNavbar(!isScrollingDown);
             }
 
-            setLastScrollY(currentScrollY); // Update der Scrollposition
+            setLastScrollY(currentScrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -79,7 +79,6 @@ export default function Navbar() {
     return (
         <div>
 
-            {/* Navbar Complete */}
             <div onMouseLeave={handleMouseLeave} className='relative'>
                 <div
                     className={`flex justify-between items-center w-full mt-[1rem] z-50 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isHidden

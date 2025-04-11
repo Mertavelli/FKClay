@@ -24,7 +24,7 @@ export const useProductById = (id) => {
             if (!response.ok) throw new Error("Produkt nicht gefunden");
             return response.json();
         },
-        enabled: !!id, // Verhindert das Abrufen, wenn `id` nicht existiert
+        enabled: !!id,
     });
 };
 
@@ -45,8 +45,7 @@ export const useCreateProduct = () => {
 
             const response = await fetch(`${API_ROUTES_URL}`, {
                 method: "POST",
-                body: formData, // FormData statt JSON
-                // KEINE Content-Type setzen → Browser macht das automatisch für `FormData`
+                body: formData,
             });
 
             if (!response.ok) throw new Error("Fehler beim Erstellen des Produkts");
@@ -71,7 +70,7 @@ export const useCreateCheckoutSession = () => {
             });
 
             if (!response.ok) throw new Error("Checkout-Session konnte nicht erstellt werden");
-            return response.json(); // Erwartet { id: "stripe_session_id" }
+            return response.json();
         },
     });
 };
